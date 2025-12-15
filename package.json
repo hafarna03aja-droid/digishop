@@ -7,17 +7,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:dev": "wrangler pages dev .vercel/output/static --compatibility-date=2024-01-01",
+    "pages:deploy": "wrangler pages deploy"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
+    "@supabase/supabase-js": "^2.87.1",
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
     "midtrans-client": "^1.3.1",
     "nanoid": "^5.1.6",
-    "next": "14.1.0",
+    "next": "^16.0.10",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.0",
@@ -27,6 +31,7 @@
     "zustand": "^4.5.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -36,6 +41,7 @@
     "postcss": "^8",
     "prisma": "^5.10.2",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.54.0"
   }
 }
