@@ -1,24 +1,69 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Plus, Trash2 } from "lucide-react";
-import prisma from "@/lib/prisma";
 import { formatPrice } from "@/lib/utils";
-import { deleteProduct } from "@/app/actions/product";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
-// Force dynamic rendering to avoid build-time database calls
-export const dynamic = 'force-dynamic';
+interface Product {
+    id: string;
+    name: string;
+    price: number;
+    stock: number;
+    rating: number;
+    image: string | null;
+}
 
-export default async function AdminProducts() {
-    let products: any[] = [];
+export default function AdminProducts() {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    try {
-        products = await prisma.product.findMany({
-            orderBy: { createdAt: 'desc' }
-        });
-    } catch (error) {
-        console.error("Failed to fetch products:", error);
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('Product')
+                .select('*')
+                .order('createdAt', { ascending: false });
+
+            if (error) throw error;
+            setProducts(data || []);
+        } catch (error) {
+            console.error("Failed to fetch products:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleDelete = async (productId: string) => {
+        if (!confirm("Yakin ingin menghapus produk ini?")) return;
+
+        try {
+            const { error } = await supabase
+                .from('Product')
+                .delete()
+                .eq('id', productId);
+
+            if (error) throw error;
+            setProducts(products.filter(p => p.id !== productId));
+        } catch (error) {
+            console.error("Failed to delete product:", error);
+            alert("Gagal menghapus produk");
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-[400px]">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
+            </div>
+        );
     }
-
 
     return (
         <div className="space-y-8">
@@ -50,7 +95,7 @@ export default async function AdminProducts() {
                                 </td>
                             </tr>
                         ) : (
-                            products.map((product: any) => (
+                            products.map((product) => (
                                 <tr key={product.id} className="hover:bg-gray-50">
                                     <td className="px-6 py-4 font-medium text-gray-900">
                                         <div className="flex items-center gap-3">
@@ -64,14 +109,12 @@ export default async function AdminProducts() {
                                     <td className="px-6 py-4">{product.stock}</td>
                                     <td className="px-6 py-4">{product.rating}</td>
                                     <td className="px-6 py-4">
-                                        <form action={async () => {
-                                            "use server";
-                                            await deleteProduct(product.id);
-                                        }}>
-                                            <button className="text-red-600 hover:text-red-800 transition-colors">
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </form>
+                                        <button
+                                            onClick={() => handleDelete(product.id)}
+                                            className="text-red-600 hover:text-red-800 transition-colors"
+                                        >
+                                            <Trash2 className="w-4 h-4" />
+                                        </button>
                                     </td>
                                 </tr>
                             ))
