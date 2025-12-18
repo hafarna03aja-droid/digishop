@@ -74,7 +74,7 @@ export async function createTransaction(
     try {
         const transaction = await snap.createTransaction(parameter);
 
-        // Save order to database
+        // Save order to database with OrderItems
         try {
             await prisma.order.create({
                 data: {
@@ -88,9 +88,16 @@ export async function createTransaction(
                     snapToken: transaction.token,
                     status: "PENDING",
                     paymentStatus: "unpaid",
+                    items: {
+                        create: items.map((item) => ({
+                            productId: item.id,
+                            quantity: item.quantity,
+                            price: item.price,
+                        })),
+                    },
                 }
             });
-            console.log(`[DB] Order ${orderId} saved to database`);
+            console.log(`[DB] Order ${orderId} saved to database with ${items.length} item(s)`);
         } catch (dbError) {
             // Log but don't fail - order still created in Midtrans
             console.error("[DB] Failed to save order:", dbError);

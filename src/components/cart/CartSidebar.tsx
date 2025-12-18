@@ -4,10 +4,11 @@
 import { useCartStore } from "@/store/cart-store";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
-import { Minus, Plus, Trash2, ShoppingBag, User, Mail, Phone, MapPin } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, User, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 // Minimal Sheet implementation for this specific use case if shadcn/ui sheet is not fully installed
 // Or assuming we build a custom sidebar if we don't want to rely on potential shadcn bloat for now.
@@ -269,95 +270,25 @@ export const CartSidebar = () => {
                         </div>
 
                         {items.length > 0 && (
-                            <div className="p-6 border-t bg-gray-50">
-                                <div className="space-y-2 mb-4">
+                            <div className="p-6 border-t bg-gray-50 space-y-3">
+                                <div className="space-y-2">
                                     <div className="flex justify-between items-center text-sm text-gray-600">
-                                        <span>Subtotal</span>
-                                        <span>{formatPrice(totalPrice())}</span>
-                                    </div>
-                                    <div className="flex justify-between items-center text-sm text-gray-600">
-                                        <span>Ongkos Kirim</span>
-                                        <span>{shippingCost > 0 ? formatPrice(shippingCost) : '-'}</span>
-                                    </div>
-                                    <div className="flex justify-between items-center border-t pt-2 mt-2">
-                                        <span className="font-bold text-gray-800">Total Pembayaran</span>
-                                        <span className="text-xl font-bold text-green-700">{formatPrice(finalTotal)}</span>
+                                        <span>Subtotal ({items.length} item)</span>
+                                        <span className="font-medium">{formatPrice(totalPrice())}</span>
                                     </div>
                                 </div>
-                                <Button
-                                    className="w-full h-12 text-lg bg-green-600 hover:bg-green-700 shadow-lg shadow-green-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                    disabled={!selectedCity || isCalculating || isProcessing || !customerName || !customerEmail || !customerPhone}
-                                    onClick={async () => {
-                                        // Validation
-                                        if (!customerName.trim()) {
-                                            alert("Mohon isi nama lengkap");
-                                            return;
-                                        }
-                                        if (!customerEmail.trim() || !customerEmail.includes("@")) {
-                                            alert("Mohon isi email yang valid");
-                                            return;
-                                        }
-                                        if (!customerPhone.trim() || customerPhone.length < 10) {
-                                            alert("Mohon isi nomor telepon yang valid");
-                                            return;
-                                        }
-                                        if (!selectedCity) {
-                                            alert("Mohon pilih tujuan pengiriman");
-                                            return;
-                                        }
-
-                                        setIsProcessing(true);
-                                        try {
-                                            const { createTransaction } = await import("@/app/actions/payment");
-
-                                            // Build full address
-                                            const selectedCityData = cities.find(c => c.city_id === selectedCity);
-                                            const selectedProvinceData = provinces.find(p => p.province_id === selectedProvince);
-                                            const fullAddress = customerAddress
-                                                ? `${customerAddress}, ${selectedCityData?.city_name || ''}, ${selectedProvinceData?.province || ''}`
-                                                : `${selectedCityData?.city_name || ''}, ${selectedProvinceData?.province || ''}`;
-
-                                            const { token } = await createTransaction(
-                                                items,
-                                                finalTotal,
-                                                shippingCost,
-                                                {
-                                                    name: customerName,
-                                                    email: customerEmail,
-                                                    phone: customerPhone,
-                                                    address: fullAddress
-                                                }
-                                            );
-
-                                            // @ts-ignore
-                                            window.snap.pay(token, {
-                                                onSuccess: function (result: any) {
-                                                    alert(`Pembayaran berhasil! Terima kasih ${customerName}. Konfirmasi akan dikirim ke ${customerEmail}`);
-                                                    console.log(result);
-                                                    // clearCart();
-                                                },
-                                                onPending: function (result: any) {
-                                                    alert("Menunggu pembayaran... Silakan selesaikan pembayaran Anda.");
-                                                    console.log(result);
-                                                },
-                                                onError: function (result: any) {
-                                                    alert("Pembayaran gagal! Silakan coba lagi.");
-                                                    console.log(result);
-                                                },
-                                                onClose: function () {
-                                                    console.log('Customer closed the popup');
-                                                }
-                                            })
-                                        } catch (error) {
-                                            console.error("Payment error", error);
-                                            alert("Gagal memproses pembayaran. Silakan coba lagi.");
-                                        } finally {
-                                            setIsProcessing(false);
-                                        }
-                                    }}
-                                >
-                                    {isProcessing ? "Memproses..." : "Checkout Sekarang"}
-                                </Button>
+                                <Link href="/checkout" className="block">
+                                    <Button
+                                        className="w-full h-12 text-lg bg-green-600 hover:bg-green-700 shadow-lg shadow-green-200"
+                                        onClick={() => toggleCart()}
+                                    >
+                                        Checkout Sekarang
+                                        <ArrowRight className="w-5 h-5 ml-2" />
+                                    </Button>
+                                </Link>
+                                <p className="text-xs text-center text-gray-500">
+                                    * Data pengiriman akan diisi di halaman checkout
+                                </p>
                             </div>
                         )}
                     </motion.div>

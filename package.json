@@ -10,7 +10,10 @@
     "postinstall": "prisma generate",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:dev": "wrangler pages dev .vercel/output/static --compatibility-date=2024-01-01",
-    "pages:deploy": "wrangler pages deploy"
+    "pages:deploy": "wrangler pages deploy",
+    "netlify:build": "next build",
+    "netlify:deploy": "netlify deploy",
+    "netlify:deploy:prod": "netlify deploy --prod"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",

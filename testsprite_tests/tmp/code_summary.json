@@ -1,0 +1,155 @@
+{
+    "tech_stack": [
+        "TypeScript",
+        "Next.js 14",
+        "React 18",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Supabase",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Zustand",
+        "Zod",
+        "Midtrans Payment Gateway",
+        "RajaOngkir Shipping API",
+        "Resend Email",
+        "Cloudflare Pages"
+    ],
+    "features": [
+        {
+            "name": "Product Management",
+            "description": "Product catalog with CRUD operations, stock management, and product showcase",
+            "files": [
+                "src/app/actions/product.ts",
+                "src/components/landing/ProductShowcase.tsx",
+                "prisma/schema.prisma"
+            ]
+        },
+        {
+            "name": "Shopping Cart",
+            "description": "Shopping cart state management with add, remove, update quantity, and checkout functionality",
+            "files": [
+                "src/store/cart-store.ts",
+                "src/components/cart/CartSidebar.tsx"
+            ]
+        },
+        {
+            "name": "Payment Integration",
+            "description": "Midtrans payment gateway integration for secure online payments",
+            "files": [
+                "src/app/actions/payment.ts",
+                "src/lib/midtrans.ts",
+                "src/types/midtrans-client.d.ts"
+            ]
+        },
+        {
+            "name": "Order Management",
+            "description": "Order processing with status tracking (pending, paid, shipped, completed, cancelled)",
+            "files": [
+                "src/app/actions/payment.ts",
+                "prisma/schema.prisma"
+            ]
+        },
+        {
+            "name": "Shipping Integration",
+            "description": "RajaOngkir API integration for shipping cost calculation and courier selection",
+            "files": [
+                "src/app/actions/shipping.ts",
+                "src/lib/rajaongkir.ts",
+                "src/app/pengiriman/page.tsx"
+            ]
+        },
+        {
+            "name": "Flash Sale",
+            "description": "Time-limited flash sale functionality with countdown timer",
+            "files": [
+                "src/components/landing/FlashSale.tsx"
+            ]
+        },
+        {
+            "name": "Marketing Campaigns",
+            "description": "Marketing campaign management including coupons, flash sales, and banners",
+            "files": [
+                "prisma/schema.prisma"
+            ]
+        },
+        {
+            "name": "Notification System",
+            "description": "Email and WhatsApp notification system for order updates",
+            "files": [
+                "src/lib/notifications.ts"
+            ]
+        },
+        {
+            "name": "Admin Dashboard",
+            "description": "Admin panel for managing products, orders, and marketing campaigns",
+            "files": [
+                "src/app/admin/page.tsx",
+                "src/app/admin/layout.tsx"
+            ]
+        },
+        {
+            "name": "Landing Page",
+            "description": "Main landing page with hero section, product showcase, testimonials, and about us section",
+            "files": [
+                "src/app/page.tsx",
+                "src/components/landing/Hero.tsx",
+                "src/components/landing/ProductShowcase.tsx",
+                "src/components/landing/Testimonials.tsx",
+                "src/components/landing/AboutUs.tsx"
+            ]
+        },
+        {
+            "name": "Layout Components",
+            "description": "Reusable layout components including navbar and footer",
+            "files": [
+                "src/components/layout/Navbar.tsx",
+                "src/components/layout/Footer.tsx",
+                "src/app/layout.tsx"
+            ]
+        },
+        {
+            "name": "UI Components",
+            "description": "Reusable UI components for forms and cards",
+            "files": [
+                "src/components/ui/button.tsx",
+                "src/components/ui/card.tsx",
+                "src/components/ui/input.tsx"
+            ]
+        },
+        {
+            "name": "Database Integration",
+            "description": "Prisma ORM and Supabase integration for data persistence",
+            "files": [
+                "src/lib/prisma.ts",
+                "src/lib/supabase.ts",
+                "prisma/schema.prisma"
+            ]
+        },
+        {
+            "name": "Information Pages",
+            "description": "Static information pages including ordering guide, privacy policy, contact, shipping info, and terms",
+            "files": [
+                "src/app/cara-pemesanan/page.tsx",
+                "src/app/kebijakan-privasi/page.tsx",
+                "src/app/kontak/page.tsx",
+                "src/app/pengiriman/page.tsx",
+                "src/app/syarat-ketentuan/page.tsx"
+            ]
+        },
+        {
+            "name": "Utilities",
+            "description": "Utility functions for common operations",
+            "files": [
+                "src/lib/utils.ts"
+            ]
+        },
+        {
+            "name": "API Routes",
+            "description": "API endpoints for server-side operations",
+            "files": [
+                "src/app/api"
+            ]
+        }
+    ]
+}

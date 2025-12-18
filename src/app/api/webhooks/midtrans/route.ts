@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server";
 import { getServiceSupabase } from "@/lib/supabase";
 import { formatPrice } from "@/lib/utils";
-import crypto from "crypto";
 
 export const runtime = 'edge';
 
-// Simple signature verification for Edge
-function verifySignature(orderId: string, statusCode: string, grossAmount: string, serverKey: string, signatureKey: string): boolean {
+// Web Crypto API compatible signature verification for Edge Runtime
+async function verifySignature(orderId: string, statusCode: string, grossAmount: string, serverKey: string, signatureKey: string): Promise<boolean> {
     const input = orderId + statusCode + grossAmount + serverKey;
-    const hash = crypto.createHash('sha512').update(input).digest('hex');
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await crypto.subtle.digest('SHA-512', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     return hash === signatureKey;
 }
 
@@ -29,7 +32,7 @@ export async function POST(req: Request) {
         // Verify signature if server key is available
         const serverKey = process.env.MIDTRANS_SERVER_KEY;
         if (serverKey && signatureKey) {
-            const isValid = verifySignature(orderId, statusCode, grossAmount, serverKey, signatureKey);
+            const isValid = await verifySignature(orderId, statusCode, grossAmount, serverKey, signatureKey);
             if (!isValid) {
                 console.error("Invalid signature");
                 return NextResponse.json({ status: "error", message: "Invalid signature" }, { status: 403 });
