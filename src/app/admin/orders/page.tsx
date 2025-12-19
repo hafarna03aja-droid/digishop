@@ -133,7 +133,7 @@ export default function AdminOrdersPage() {
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 {(['PENDING', 'PAID', 'SHIPPED', 'COMPLETED', 'CANCELLED'] as const).map(status => {
-                    const count = orders.filter(o => o.status === status).length;
+                    const count = (orders || []).filter(o => o.status === status).length;
                     const Icon = statusIcons[status];
                     return (
                         <div key={status} className="bg-white rounded-lg shadow-sm border p-4">
@@ -172,7 +172,7 @@ export default function AdminOrdersPage() {
                                     </td>
                                 </tr>
                             ) : (
-                                orders.map((order) => (
+                                (orders || []).map((order) => (
                                     <tr key={order.id} className="hover:bg-gray-50">
                                         <td className="px-6 py-4 font-mono text-xs">{order.id}</td>
                                         <td className="px-6 py-4">

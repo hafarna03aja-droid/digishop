@@ -312,7 +312,7 @@ export default function CheckoutPage() {
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                             >
                                                 <option value="">Pilih Provinsi</option>
-                                                {provinces.map((prov) => (
+                                                {(provinces || []).map((prov) => (
                                                     <option key={prov.province_id} value={prov.province_id}>
                                                         {prov.province}
                                                     </option>
@@ -328,7 +328,7 @@ export default function CheckoutPage() {
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent disabled:bg-gray-100"
                                             >
                                                 <option value="">Pilih Kota</option>
-                                                {cities.map((city) => (
+                                                {(cities || []).map((city) => (
                                                     <option key={city.city_id} value={city.city_id}>
                                                         {city.type} {city.city_name}
                                                     </option>
@@ -348,8 +348,8 @@ export default function CheckoutPage() {
                                                         setSelectedShipping(null);
                                                     }}
                                                     className={`px-4 py-3 border-2 rounded-lg font-medium uppercase transition-colors ${selectedCourier === courier
-                                                            ? "border-green-600 bg-green-50 text-green-700"
-                                                            : "border-gray-300 hover:border-gray-400"
+                                                        ? "border-green-600 bg-green-50 text-green-700"
+                                                        : "border-gray-300 hover:border-gray-400"
                                                         }`}
                                                 >
                                                     {courier}
@@ -375,13 +375,13 @@ export default function CheckoutPage() {
                                     {shippingOptions.length > 0 && (
                                         <div className="space-y-2">
                                             <label className="block text-sm font-medium text-gray-700 mb-2">Pilih Layanan</label>
-                                            {shippingOptions.map((option, idx) => (
+                                            {(shippingOptions || []).map((option, idx) => (
                                                 <button
                                                     key={idx}
                                                     onClick={() => setSelectedShipping(option)}
                                                     className={`w-full p-4 border-2 rounded-lg text-left transition-colors ${selectedShipping?.service === option.service
-                                                            ? "border-green-600 bg-green-50"
-                                                            : "border-gray-300 hover:border-gray-400"
+                                                        ? "border-green-600 bg-green-50"
+                                                        : "border-gray-300 hover:border-gray-400"
                                                         }`}
                                                 >
                                                     <div className="flex justify-between items-center">
@@ -445,7 +445,7 @@ export default function CheckoutPage() {
                         <div className="bg-white rounded-lg shadow-sm p-6 sticky top-4">
                             <h3 className="text-lg font-bold text-gray-900 mb-4">Ringkasan Pesanan</h3>
                             <div className="space-y-3 mb-6">
-                                {items.map((item) => (
+                                {(items || []).map((item) => (
                                     <div key={item.id} className="flex gap-3">
                                         {item.image && (
                                             <div className="w-16 h-16 bg-gray-100 rounded overflow-hidden flex-shrink-0">

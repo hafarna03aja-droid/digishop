@@ -117,7 +117,7 @@ export const CartSidebar = () => {
                                 </div>
                             ) : (
                                 <>
-                                    {items.map((item) => (
+                                    {(items || []).map((item) => (
                                         <motion.div
                                             layout
                                             key={item.id}
@@ -223,7 +223,7 @@ export const CartSidebar = () => {
                                                         onChange={(e) => setSelectedProvince(e.target.value)}
                                                     >
                                                         <option value="">Pilih Provinsi</option>
-                                                        {provinces.map(p => (
+                                                        {(provinces || []).map(p => (
                                                             <option key={p.province_id} value={p.province_id}>{p.province}</option>
                                                         ))}
                                                     </select>
@@ -237,7 +237,7 @@ export const CartSidebar = () => {
                                                         disabled={!selectedProvince}
                                                     >
                                                         <option value="">Pilih Kota</option>
-                                                        {cities.map(c => (
+                                                        {(cities || []).map(c => (
                                                             <option key={c.city_id} value={c.city_id}>{c.type} {c.city_name}</option>
                                                         ))}
                                                     </select>

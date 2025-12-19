@@ -17,11 +17,11 @@ export async function getShippingCost(destination: string, weight: number, couri
     const costs = await calculateShippingCost({ origin, destination, weight, courier });
 
     // Transform for Frontend
-    return costs.map((c: any) => ({
+    return (costs || []).map((c: any) => ({
         service: c.service,
         description: c.description,
-        cost: c.cost[0].value,
-        etd: c.cost[0].etd,
-        formattedCost: formatPrice(c.cost[0].value)
+        cost: c.cost?.[0]?.value || 0,
+        etd: c.cost?.[0]?.etd || "N/A",
+        formattedCost: formatPrice(c.cost?.[0]?.value || 0)
     }));
 }
