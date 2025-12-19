@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Package, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function OrderSuccessPage() {
+function OrderSuccessContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [orderId, setOrderId] = useState("");
@@ -77,5 +77,17 @@ export default function OrderSuccessPage() {
                 </p>
             </motion.div>
         </div>
+    );
+}
+
+export default function OrderSuccessPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
+                <div className="animate-pulse text-green-600">Memuat...</div>
+            </div>
+        }>
+            <OrderSuccessContent />
+        </Suspense>
     );
 }

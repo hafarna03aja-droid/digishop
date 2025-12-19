@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Clock, CreditCard, Home, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function OrderPendingPage() {
+function OrderPendingContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [orderId, setOrderId] = useState("");
@@ -86,5 +86,17 @@ export default function OrderPendingPage() {
                 </p>
             </motion.div>
         </div>
+    );
+}
+
+export default function OrderPendingPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 flex items-center justify-center">
+                <div className="animate-pulse text-orange-600">Memuat...</div>
+            </div>
+        }>
+            <OrderPendingContent />
+        </Suspense>
     );
 }
