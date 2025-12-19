@@ -185,7 +185,7 @@ export default function CheckoutPage() {
     const grandTotal = subtotal + shippingCost;
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
+        <div className="min-h-screen bg-gray-50 py-6 sm:py-12">
             {/* Midtrans Snap Script */}
             <script
                 src={process.env.NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION === "true"
@@ -194,8 +194,8 @@ export default function CheckoutPage() {
                 data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY || process.env.MIDTRANS_CLIENT_KEY}
             />
 
-            <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+            <div className="max-w-6xl mx-auto px-3 sm:px-4">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Checkout</h1>
 
                 {error && (
                     <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-6">
@@ -207,34 +207,34 @@ export default function CheckoutPage() {
                     {/* Left Column - Forms */}
                     <div className="lg:col-span-2 space-y-6">
                         {/* Step Indicator */}
-                        <div className="bg-white rounded-lg shadow-sm p-6">
-                            <div className="flex items-center justify-between mb-6">
-                                <div className={`flex items-center ${step >= 1 ? "text-green-600" : "text-gray-400"}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 1 ? "bg-green-600 text-white" : "bg-gray-200"}`}>1</div>
-                                    <span className="ml-2 font-medium">Data Diri</span>
+                        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+                            <div className="flex items-center justify-between mb-4 sm:mb-6">
+                                <div className={`flex flex-col sm:flex-row items-center ${step >= 1 ? "text-green-600" : "text-gray-400"}`}>
+                                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-sm sm:text-base ${step >= 1 ? "bg-green-600 text-white" : "bg-gray-200"}`}>1</div>
+                                    <span className="mt-1 sm:mt-0 sm:ml-2 text-xs sm:text-sm font-medium">Data Diri</span>
                                 </div>
-                                <div className="flex-1 h-1 mx-4 bg-gray-200">
+                                <div className="flex-1 h-1 mx-2 sm:mx-4 bg-gray-200">
                                     <div className={`h-full ${step >= 2 ? "bg-green-600" : "bg-gray-200"}`} style={{ width: step >= 2 ? "100%" : "0%" }} />
                                 </div>
-                                <div className={`flex items-center ${step >= 2 ? "text-green-600" : "text-gray-400"}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 2 ? "bg-green-600 text-white" : "bg-gray-200"}`}>2</div>
-                                    <span className="ml-2 font-medium">Pengiriman</span>
+                                <div className={`flex flex-col sm:flex-row items-center ${step >= 2 ? "text-green-600" : "text-gray-400"}`}>
+                                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-sm sm:text-base ${step >= 2 ? "bg-green-600 text-white" : "bg-gray-200"}`}>2</div>
+                                    <span className="mt-1 sm:mt-0 sm:ml-2 text-xs sm:text-sm font-medium">Pengiriman</span>
                                 </div>
-                                <div className="flex-1 h-1 mx-4 bg-gray-200">
+                                <div className="flex-1 h-1 mx-2 sm:mx-4 bg-gray-200">
                                     <div className={`h-full ${step >= 3 ? "bg-green-600" : "bg-gray-200"}`} style={{ width: step >= 3 ? "100%" : "0%" }} />
                                 </div>
-                                <div className={`flex items-center ${step >= 3 ? "text-green-600" : "text-gray-400"}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 3 ? "bg-green-600 text-white" : "bg-gray-200"}`}>3</div>
-                                    <span className="ml-2 font-medium">Pembayaran</span>
+                                <div className={`flex flex-col sm:flex-row items-center ${step >= 3 ? "text-green-600" : "text-gray-400"}`}>
+                                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-sm sm:text-base ${step >= 3 ? "bg-green-600 text-white" : "bg-gray-200"}`}>3</div>
+                                    <span className="mt-1 sm:mt-0 sm:ml-2 text-xs sm:text-sm font-medium">Pembayaran</span>
                                 </div>
                             </div>
                         </div>
 
                         {/* Step 1: Customer Information */}
-                        <div className="bg-white rounded-lg shadow-sm p-6">
-                            <div className="flex items-center mb-6">
-                                <MapPin className="w-6 h-6 text-green-600 mr-2" />
-                                <h2 className="text-xl font-bold text-gray-900">Data Pelanggan</h2>
+                        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+                            <div className="flex items-center mb-4 sm:mb-6">
+                                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2" />
+                                <h2 className="text-lg sm:text-xl font-bold text-gray-900">Data Pelanggan</h2>
                             </div>
                             <div className="space-y-4">
                                 <div>
@@ -243,18 +243,18 @@ export default function CheckoutPage() {
                                         type="text"
                                         value={customerName}
                                         onChange={(e) => setCustomerName(e.target.value)}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                        className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-400 text-base"
                                         placeholder="Masukkan nama lengkap"
                                     />
                                 </div>
-                                <div className="grid md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                                         <input
                                             type="email"
                                             value={customerEmail}
                                             onChange={(e) => setCustomerEmail(e.target.value)}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-400 text-base"
                                             placeholder="email@example.com"
                                         />
                                     </div>
@@ -264,7 +264,7 @@ export default function CheckoutPage() {
                                             type="tel"
                                             value={customerPhone}
                                             onChange={(e) => setCustomerPhone(e.target.value)}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-400 text-base"
                                             placeholder="08123456789"
                                         />
                                     </div>
@@ -275,7 +275,7 @@ export default function CheckoutPage() {
                                         value={address}
                                         onChange={(e) => setAddress(e.target.value)}
                                         rows={3}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                        className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-400 text-base"
                                         placeholder="Jalan, nomor rumah, RT/RW, kelurahan, kecamatan"
                                     />
                                 </div>
@@ -288,7 +288,7 @@ export default function CheckoutPage() {
                                             setError("Harap lengkapi semua data pelanggan");
                                         }
                                     }}
-                                    className="w-full bg-green-600 hover:bg-green-700"
+                                    className="w-full bg-green-600 hover:bg-green-700 py-3 sm:py-2 text-base"
                                 >
                                     Lanjut ke Pengiriman
                                 </Button>
@@ -297,19 +297,19 @@ export default function CheckoutPage() {
 
                         {/* Step 2: Shipping */}
                         {step >= 2 && (
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <div className="flex items-center mb-6">
-                                    <Truck className="w-6 h-6 text-green-600 mr-2" />
-                                    <h2 className="text-xl font-bold text-gray-900">Metode Pengiriman</h2>
+                            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+                                <div className="flex items-center mb-4 sm:mb-6">
+                                    <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2" />
+                                    <h2 className="text-lg sm:text-xl font-bold text-gray-900">Metode Pengiriman</h2>
                                 </div>
                                 <div className="space-y-4">
-                                    <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700 mb-1">Provinsi *</label>
                                             <select
                                                 value={selectedProvince}
                                                 onChange={(e) => setSelectedProvince(e.target.value)}
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                                className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 text-base"
                                             >
                                                 <option value="">Pilih Provinsi</option>
                                                 {(provinces || []).map((prov) => (
@@ -325,7 +325,7 @@ export default function CheckoutPage() {
                                                 value={selectedCity}
                                                 onChange={(e) => setSelectedCity(e.target.value)}
                                                 disabled={!selectedProvince}
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent disabled:bg-gray-100"
+                                                className="w-full px-3 sm:px-4 py-2.5 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent disabled:bg-gray-100 bg-white text-gray-900 text-base"
                                             >
                                                 <option value="">Pilih Kota</option>
                                                 {(cities || []).map((city) => (
@@ -360,7 +360,7 @@ export default function CheckoutPage() {
                                     <Button
                                         onClick={calculateShipping}
                                         disabled={!selectedCity || !selectedCourier || loadingShipping}
-                                        className="w-full bg-blue-600 hover:bg-blue-700"
+                                        className="w-full bg-blue-600 hover:bg-blue-700 py-3 sm:py-2 text-base"
                                     >
                                         {loadingShipping ? (
                                             <>
@@ -400,7 +400,7 @@ export default function CheckoutPage() {
                                     {selectedShipping && (
                                         <Button
                                             onClick={() => setStep(3)}
-                                            className="w-full bg-green-600 hover:bg-green-700"
+                                            className="w-full bg-green-600 hover:bg-green-700 py-3 sm:py-2 text-base"
                                         >
                                             Lanjut ke Pembayaran
                                         </Button>
@@ -411,12 +411,12 @@ export default function CheckoutPage() {
 
                         {/* Step 3: Payment */}
                         {step >= 3 && (
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <div className="flex items-center mb-6">
-                                    <CreditCard className="w-6 h-6 text-green-600 mr-2" />
-                                    <h2 className="text-xl font-bold text-gray-900">Pembayaran</h2>
+                            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+                                <div className="flex items-center mb-4 sm:mb-6">
+                                    <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2" />
+                                    <h2 className="text-lg sm:text-xl font-bold text-gray-900">Pembayaran</h2>
                                 </div>
-                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
                                     <p className="text-sm text-blue-800">
                                         Anda akan diarahkan ke halaman pembayaran Midtrans yang aman.
                                         Berbagai metode pembayaran tersedia: Transfer Bank, E-Wallet, Kartu Kredit, dan lainnya.
@@ -425,7 +425,7 @@ export default function CheckoutPage() {
                                 <Button
                                     onClick={handleCheckout}
                                     disabled={processing}
-                                    className="w-full bg-green-600 hover:bg-green-700 text-lg py-6"
+                                    className="w-full bg-green-600 hover:bg-green-700 text-base sm:text-lg py-4 sm:py-6"
                                 >
                                     {processing ? (
                                         <>
@@ -442,7 +442,7 @@ export default function CheckoutPage() {
 
                     {/* Right Column - Order Summary */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white rounded-lg shadow-sm p-6 sticky top-4">
+                        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 sticky top-4">
                             <h3 className="text-lg font-bold text-gray-900 mb-4">Ringkasan Pesanan</h3>
                             <div className="space-y-3 mb-6">
                                 {(items || []).map((item) => (
