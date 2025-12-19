@@ -43,11 +43,15 @@ export const useCartStore = create<CartStore>()(
                 }
             },
             removeItem: (id) => {
-                set({ items: get().items.filter((i) => i.id !== id) });
+                const newItems = get().items.filter((i) => i.id !== id);
+                // Auto-close cart if empty
+                set({ items: newItems, isOpen: newItems.length > 0 ? get().isOpen : false });
             },
             updateQuantity: (id, quantity) => {
                 if (quantity <= 0) {
-                    set({ items: get().items.filter((i) => i.id !== id) });
+                    const newItems = get().items.filter((i) => i.id !== id);
+                    // Auto-close cart if empty
+                    set({ items: newItems, isOpen: newItems.length > 0 ? get().isOpen : false });
                     return;
                 }
                 set({
