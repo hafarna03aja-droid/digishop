@@ -12,7 +12,7 @@ export default function PengirimanPage() {
             <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-                        DigiShop
+                        NusaPrima
                     </Link>
                     <Link href="/">
                         <Button variant="ghost" size="sm">
@@ -29,7 +29,7 @@ export default function PengirimanPage() {
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Kebijakan Pengiriman</h1>
-                    <p className="text-gray-600 mb-8">Informasi lengkap tentang proses pengiriman produk DigiShop</p>
+                    <p className="text-gray-600 mb-8">Informasi lengkap tentang proses pengiriman produk NusaPrima</p>
 
                     {/* Courier Partners */}
                     <section className="mb-10">
@@ -161,7 +161,7 @@ export default function PengirimanPage() {
                         </h2>
                         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <p className="text-gray-600 mb-4">
-                                DigiShop melayani pengiriman ke <strong>seluruh wilayah Indonesia</strong>, termasuk:
+                                NusaPrima melayani pengiriman ke <strong>seluruh wilayah Indonesia</strong>, termasuk:
                             </p>
                             <div className="grid md:grid-cols-2 gap-4">
                                 <ul className="list-disc list-inside text-gray-600 space-y-1">
@@ -201,7 +201,7 @@ export default function PengirimanPage() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-blue-600">•</span>
-                                    DigiShop tidak bertanggung jawab atas keterlambatan yang disebabkan oleh force majeure (bencana alam, pandemi, dll).
+                                    NusaPrima tidak bertanggung jawab atas keterlambatan yang disebabkan oleh force majeure (bencana alam, pandemi, dll).
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-blue-600">•</span>
@@ -233,7 +233,7 @@ export default function PengirimanPage() {
             {/* Footer */}
             <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
                 <div className="container mx-auto px-4 text-center">
-                    <p className="text-sm">© 2025 DigiShop. All rights reserved.</p>
+                    <p className="text-sm">© 2025 NusaPrima. All rights reserved.</p>
                 </div>
             </footer>
         </div>

@@ -7,7 +7,7 @@ export const Footer = () => {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
-                        <h3 className="text-white text-xl font-bold mb-4">DigiShop</h3>
+                        <h3 className="text-white text-xl font-bold mb-4">NusaPrima</h3>
                         <p className="text-sm text-gray-400">
                             Menyediakan produk berkualitas terbaik — mulai dari madu premium, kopi pilihan, hingga produk digital dan layanan jasa profesional. Terpercaya sejak 2024.
                         </p>
@@ -33,12 +33,12 @@ export const Footer = () => {
                     <div>
                         <h4 className="text-white font-semibold mb-4">Ikuti Kami</h4>
                         <div className="flex gap-4">
-                            <a href="https://facebook.com/digishop" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Facebook className="w-5 h-5" /></a>
-                            <a href="https://instagram.com/digishop" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Instagram className="w-5 h-5" /></a>
-                            <a href="https://twitter.com/digishop" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Twitter className="w-5 h-5" /></a>
+                            <a href="https://facebook.com/NusaPrima" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Facebook className="w-5 h-5" /></a>
+                            <a href="https://instagram.com/NusaPrima" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Instagram className="w-5 h-5" /></a>
+                            <a href="https://twitter.com/NusaPrima" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors"><Twitter className="w-5 h-5" /></a>
                         </div>
                         <div className="mt-6">
-                            <p className="text-xs text-gray-500">© 2025 DigiShop. All rights reserved.</p>
+                            <p className="text-xs text-gray-500">© 2025 NusaPrima. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

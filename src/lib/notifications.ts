@@ -24,7 +24,7 @@ export async function sendEmail({ to, subject, html }: { to: string, subject: st
 
     try {
         const data = await resend.emails.send({
-            from: 'DigiShop <onboarding@resend.dev>', // Default for testing, change to verified domain in production
+            from: 'NusaPrima <onboarding@resend.dev>', // Default for testing, change to verified domain in production
             to: [to],
             subject: subject,
             html: html,

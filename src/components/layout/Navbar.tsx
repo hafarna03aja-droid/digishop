@@ -33,7 +33,7 @@ export const Navbar = () => {
         >
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-                    DigiShop
+                    NusaPrima
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-8">

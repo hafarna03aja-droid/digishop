@@ -12,7 +12,7 @@ export default function SyaratKetentuanPage() {
             <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-                        DigiShop
+                        NusaPrima
                     </Link>
                     <Link href="/">
                         <Button variant="ghost" size="sm">
@@ -31,7 +31,7 @@ export default function SyaratKetentuanPage() {
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Syarat dan Ketentuan</h1>
                     <p className="text-gray-600 mb-2">Terakhir diperbarui: 15 Desember 2025</p>
                     <p className="text-gray-600 mb-8">
-                        Syarat dan Ketentuan ini mengatur penggunaan layanan DigiShop. Dengan mengakses dan menggunakan
+                        Syarat dan Ketentuan ini mengatur penggunaan layanan NusaPrima. Dengan mengakses dan menggunakan
                         layanan kami, Anda menyetujui untuk terikat dengan syarat dan ketentuan ini.
                     </p>
 
@@ -42,7 +42,7 @@ export default function SyaratKetentuanPage() {
                             <h2 className="text-lg font-semibold text-yellow-900">Penting untuk Dibaca</h2>
                         </div>
                         <p className="text-yellow-800">
-                            Dengan melakukan pembelian di DigiShop, Anda dianggap telah membaca, memahami, dan menyetujui
+                            Dengan melakukan pembelian di NusaPrima, Anda dianggap telah membaca, memahami, dan menyetujui
                             seluruh Syarat dan Ketentuan yang berlaku. Harap baca dengan seksama sebelum melakukan transaksi.
                         </p>
                     </div>
@@ -57,11 +57,11 @@ export default function SyaratKetentuanPage() {
                         </div>
                         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <ul className="space-y-3 text-gray-600">
-                                <li><strong>"DigiShop"</strong> atau <strong>"Kami"</strong> mengacu pada platform e-commerce yang dikelola oleh [Nama PT/CV], dengan alamat terdaftar di [Alamat Lengkap].</li>
-                                <li><strong>"Pengguna"</strong> atau <strong>"Anda"</strong> mengacu pada individu atau badan hukum yang mengakses, mendaftar, atau melakukan transaksi di DigiShop.</li>
-                                <li><strong>"Produk"</strong> mencakup barang fisik (madu, kopi, dll) dan produk digital (e-book, software, voucher, jasa layanan) yang dijual melalui DigiShop.</li>
-                                <li><strong>"Layanan"</strong> mencakup seluruh fitur, fungsi, dan fasilitas yang disediakan oleh DigiShop.</li>
-                                <li><strong>"Transaksi"</strong> mengacu pada proses pembelian produk dan/atau layanan melalui DigiShop.</li>
+                                <li><strong>"NusaPrima"</strong> atau <strong>"Kami"</strong> mengacu pada platform e-commerce yang dikelola oleh [Nama PT/CV], dengan alamat terdaftar di [Alamat Lengkap].</li>
+                                <li><strong>"Pengguna"</strong> atau <strong>"Anda"</strong> mengacu pada individu atau badan hukum yang mengakses, mendaftar, atau melakukan transaksi di NusaPrima.</li>
+                                <li><strong>"Produk"</strong> mencakup barang fisik (madu, kopi, dll) dan produk digital (e-book, software, voucher, jasa layanan) yang dijual melalui NusaPrima.</li>
+                                <li><strong>"Layanan"</strong> mencakup seluruh fitur, fungsi, dan fasilitas yang disediakan oleh NusaPrima.</li>
+                                <li><strong>"Transaksi"</strong> mengacu pada proses pembelian produk dan/atau layanan melalui NusaPrima.</li>
                             </ul>
                         </div>
                     </section>
@@ -79,14 +79,14 @@ export default function SyaratKetentuanPage() {
                                 <h3 className="font-semibold text-gray-900 mb-2">2.1 Kelayakan Pengguna</h3>
                                 <p className="text-gray-600">
                                     Anda harus berusia minimal 18 tahun atau memiliki persetujuan dari orang tua/wali untuk menggunakan
-                                    layanan DigiShop. Dengan melakukan transaksi, Anda menyatakan bahwa Anda memenuhi syarat ini.
+                                    layanan NusaPrima. Dengan melakukan transaksi, Anda menyatakan bahwa Anda memenuhi syarat ini.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900 mb-2">2.2 Akurasi Informasi</h3>
                                 <p className="text-gray-600">
                                     Anda bertanggung jawab untuk memberikan informasi yang akurat dan lengkap saat melakukan pemesanan.
-                                    DigiShop tidak bertanggung jawab atas kesalahan pengiriman akibat informasi yang tidak akurat.
+                                    NusaPrima tidak bertanggung jawab atas kesalahan pengiriman akibat informasi yang tidak akurat.
                                 </p>
                             </div>
                             <div>
@@ -111,7 +111,7 @@ export default function SyaratKetentuanPage() {
                             <div>
                                 <h3 className="font-semibold text-gray-900 mb-2">3.1 Harga Produk</h3>
                                 <p className="text-gray-600">
-                                    Harga yang tercantum sudah termasuk PPN (jika berlaku). DigiShop berhak mengubah harga tanpa
+                                    Harga yang tercantum sudah termasuk PPN (jika berlaku). NusaPrima berhak mengubah harga tanpa
                                     pemberitahuan terlebih dahulu, namun perubahan harga tidak berlaku untuk pesanan yang sudah dikonfirmasi.
                                 </p>
                             </div>
@@ -233,14 +233,14 @@ export default function SyaratKetentuanPage() {
                             <div>
                                 <h3 className="font-semibold text-gray-900 mb-2">6.1 Ketersediaan Layanan</h3>
                                 <p className="text-gray-600">
-                                    DigiShop berupaya menyediakan layanan 24/7, namun tidak menjamin ketersediaan layanan tanpa gangguan.
+                                    NusaPrima berupaya menyediakan layanan 24/7, namun tidak menjamin ketersediaan layanan tanpa gangguan.
                                     Kami tidak bertanggung jawab atas kerugian akibat gangguan teknis atau pemeliharaan sistem.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900 mb-2">6.2 Force Majeure</h3>
                                 <p className="text-gray-600">
-                                    DigiShop tidak bertanggung jawab atas keterlambatan atau kegagalan dalam memenuhi kewajiban akibat
+                                    NusaPrima tidak bertanggung jawab atas keterlambatan atau kegagalan dalam memenuhi kewajiban akibat
                                     keadaan di luar kendali kami, termasuk namun tidak terbatas pada: bencana alam, pandemi, perang,
                                     kerusuhan, gangguan internet, atau kebijakan pemerintah.
                                 </p>
@@ -248,7 +248,7 @@ export default function SyaratKetentuanPage() {
                             <div>
                                 <h3 className="font-semibold text-gray-900 mb-2">6.3 Produk Pihak Ketiga</h3>
                                 <p className="text-gray-600">
-                                    Untuk produk yang berasal dari penjual/supplier pihak ketiga, DigiShop bertindak sebagai perantara.
+                                    Untuk produk yang berasal dari penjual/supplier pihak ketiga, NusaPrima bertindak sebagai perantara.
                                     Garansi dan klaim produk mengikuti ketentuan dari produsen/supplier masing-masing.
                                 </p>
                             </div>
@@ -265,16 +265,16 @@ export default function SyaratKetentuanPage() {
                         </div>
                         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <p className="text-gray-600 mb-4">
-                                Seluruh konten di DigiShop, termasuk namun tidak terbatas pada:
+                                Seluruh konten di NusaPrima, termasuk namun tidak terbatas pada:
                             </p>
                             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-                                <li>Logo, nama merek, dan identitas visual DigiShop</li>
+                                <li>Logo, nama merek, dan identitas visual NusaPrima</li>
                                 <li>Desain website, tata letak, dan antarmuka pengguna</li>
                                 <li>Teks, gambar, grafik, dan konten multimedia</li>
                                 <li>Kode sumber dan perangkat lunak</li>
                             </ul>
                             <p className="text-gray-600">
-                                adalah milik DigiShop atau pemberi lisensinya dan dilindungi oleh UU No. 28 Tahun 2014 tentang Hak Cipta
+                                adalah milik NusaPrima atau pemberi lisensinya dan dilindungi oleh UU No. 28 Tahun 2014 tentang Hak Cipta
                                 dan peraturan perundang-undangan terkait. Penggunaan tanpa izin tertulis merupakan pelanggaran hukum.
                             </p>
                         </div>
@@ -299,7 +299,7 @@ export default function SyaratKetentuanPage() {
                                 <h3 className="font-semibold text-gray-900 mb-2">8.2 Penyelesaian Musyawarah</h3>
                                 <p className="text-gray-600">
                                     Setiap perselisihan akan diselesaikan terlebih dahulu melalui musyawarah untuk mufakat antara
-                                    Pengguna dan DigiShop dalam jangka waktu 30 hari kalender.
+                                    Pengguna dan NusaPrima dalam jangka waktu 30 hari kalender.
                                 </p>
                             </div>
                             <div>
@@ -329,7 +329,7 @@ export default function SyaratKetentuanPage() {
                         </div>
                         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <p className="text-gray-600">
-                                DigiShop berhak untuk mengubah Syarat dan Ketentuan ini sewaktu-waktu. Perubahan akan efektif
+                                NusaPrima berhak untuk mengubah Syarat dan Ketentuan ini sewaktu-waktu. Perubahan akan efektif
                                 segera setelah dipublikasikan di website. Penggunaan layanan secara berkelanjutan setelah perubahan
                                 dianggap sebagai persetujuan Anda terhadap syarat dan ketentuan yang diperbarui.
                             </p>
@@ -361,8 +361,8 @@ export default function SyaratKetentuanPage() {
                             Jika Anda memiliki pertanyaan tentang Syarat dan Ketentuan ini, silakan hubungi:
                         </p>
                         <div className="bg-gray-50 rounded-lg p-4">
-                            <p className="font-medium text-gray-900">DigiShop Customer Service</p>
-                            <p className="text-gray-600">📧 Email: legal@digishop.id</p>
+                            <p className="font-medium text-gray-900">NusaPrima Customer Service</p>
+                            <p className="text-gray-600">📧 Email: legal@NusaPrima.id</p>
                             <p className="text-gray-600">📱 WhatsApp: +62 812-XXXX-XXXX</p>
                             <p className="text-gray-600">🕐 Jam Operasional: Senin - Jumat, 09:00 - 17:00 WIB</p>
                         </div>
@@ -373,7 +373,7 @@ export default function SyaratKetentuanPage() {
             {/* Footer */}
             <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
                 <div className="container mx-auto px-4 text-center">
-                    <p className="text-sm">© 2025 DigiShop. All rights reserved.</p>
+                    <p className="text-sm">© 2025 NusaPrima. All rights reserved.</p>
                 </div>
             </footer>
         </div>

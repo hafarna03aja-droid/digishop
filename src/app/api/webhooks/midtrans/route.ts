@@ -99,7 +99,7 @@ export async function POST(req: Request) {
                         <body>
                             <div class="container">
                                 <div class="header">
-                                    <h1>🛒 DigiShop</h1>
+                                    <h1>🛒 NusaPrima</h1>
                                     <p style="color: rgba(255,255,255,0.9);">Terima kasih atas pesanan Anda!</p>
                                 </div>
                                 <div class="content">
@@ -114,7 +114,7 @@ export async function POST(req: Request) {
                                     </div>
                                 </div>
                                 <div class="footer">
-                                    <p>🛒 DigiShop - Produk Berkualitas untuk Gaya Hidup Modern</p>
+                                    <p>🛒 NusaPrima - Produk Berkualitas untuk Gaya Hidup Modern</p>
                                 </div>
                             </div>
                         </body>
@@ -128,7 +128,7 @@ export async function POST(req: Request) {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            from: 'DigiShop <noreply@resend.dev>',
+                            from: 'NusaPrima <noreply@resend.dev>',
                             to: customerEmail,
                             subject: `✅ Pembayaran Berhasil - Order ${orderId}`,
                             html: emailHtml,

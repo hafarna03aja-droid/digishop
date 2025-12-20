@@ -34,7 +34,7 @@ export default function KontakPage() {
             <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-                        DigiShop
+                        NusaPrima
                     </Link>
                     <Link href="/">
                         <Button variant="ghost" size="sm">
@@ -69,8 +69,8 @@ export default function KontakPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-medium text-gray-900">Email</h3>
-                                            <p className="text-gray-600">support@digishop.id</p>
-                                            <p className="text-gray-600">info@digishop.id</p>
+                                            <p className="text-gray-600">support@NusaPrima.id</p>
+                                            <p className="text-gray-600">info@NusaPrima.id</p>
                                         </div>
                                     </div>
 
@@ -122,7 +122,7 @@ export default function KontakPage() {
                                     Butuh respons cepat? Hubungi kami langsung via WhatsApp untuk layanan yang lebih responsif.
                                 </p>
                                 <a
-                                    href="https://wa.me/62812XXXXXXXX?text=Halo%20DigiShop,%20saya%20ingin%20bertanya%20tentang..."
+                                    href="https://wa.me/62812XXXXXXXX?text=Halo%20NusaPrima,%20saya%20ingin%20bertanya%20tentang..."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
@@ -206,7 +206,7 @@ export default function KontakPage() {
             {/* Footer */}
             <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
                 <div className="container mx-auto px-4 text-center">
-                    <p className="text-sm">© 2025 DigiShop. All rights reserved.</p>
+                    <p className="text-sm">© 2025 NusaPrima. All rights reserved.</p>
                 </div>
             </footer>
         </div>

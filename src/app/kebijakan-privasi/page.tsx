@@ -12,7 +12,7 @@ export default function KebijakanPrivasiPage() {
             <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-                        DigiShop
+                        NusaPrima
                     </Link>
                     <Link href="/">
                         <Button variant="ghost" size="sm">
@@ -31,7 +31,7 @@ export default function KebijakanPrivasiPage() {
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Kebijakan Privasi</h1>
                     <p className="text-gray-600 mb-2">Terakhir diperbarui: 15 Desember 2025</p>
                     <p className="text-gray-600 mb-8">
-                        Kebijakan Privasi ini menjelaskan bagaimana DigiShop mengumpulkan, menggunakan, dan melindungi data pribadi Anda
+                        Kebijakan Privasi ini menjelaskan bagaimana NusaPrima mengumpulkan, menggunakan, dan melindungi data pribadi Anda
                         sesuai dengan Undang-Undang No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP) dan
                         Undang-Undang No. 11 Tahun 2008 jo. UU No. 19 Tahun 2016 tentang Informasi dan Transaksi Elektronik (UU ITE).
                     </p>
@@ -43,7 +43,7 @@ export default function KebijakanPrivasiPage() {
                             <h2 className="text-lg font-semibold text-blue-900">Komitmen Kami</h2>
                         </div>
                         <p className="text-blue-800">
-                            DigiShop berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda. Kami hanya mengumpulkan
+                            NusaPrima berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda. Kami hanya mengumpulkan
                             data yang diperlukan untuk memberikan layanan terbaik dan tidak akan menjual data Anda kepada pihak ketiga.
                         </p>
                     </div>
@@ -242,10 +242,10 @@ export default function KebijakanPrivasiPage() {
                                 silakan hubungi Petugas Perlindungan Data kami:
                             </p>
                             <div className="bg-gray-50 rounded-lg p-4">
-                                <p className="font-medium text-gray-900">DigiShop - Data Protection Officer</p>
-                                <p className="text-gray-600">📧 Email: privacy@digishop.id</p>
+                                <p className="font-medium text-gray-900">NusaPrima - Data Protection Officer</p>
+                                <p className="text-gray-600">📧 Email: privacy@NusaPrima.id</p>
                                 <p className="text-gray-600">📱 WhatsApp: +62 812-XXXX-XXXX</p>
-                                <p className="text-gray-600">📍 Alamat: [Alamat Kantor DigiShop]</p>
+                                <p className="text-gray-600">📍 Alamat: [Alamat Kantor NusaPrima]</p>
                             </div>
                             <p className="text-sm text-gray-500 mt-4">
                                 Kami akan merespons permintaan Anda dalam waktu maksimal 30 hari kerja sesuai ketentuan UU PDP.
@@ -270,7 +270,7 @@ export default function KebijakanPrivasiPage() {
             {/* Footer */}
             <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
                 <div className="container mx-auto px-4 text-center">
-                    <p className="text-sm">© 2025 DigiShop. All rights reserved.</p>
+                    <p className="text-sm">© 2025 NusaPrima. All rights reserved.</p>
                 </div>
             </footer>
         </div>

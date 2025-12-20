@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "DigiShop - Produk Berkualitas untuk Gaya Hidup Modern",
+    title: "NusaPrima - Produk Berkualitas untuk Gaya Hidup Modern",
     description: "Menyediakan madu premium, kopi pilihan, produk digital, dan layanan jasa profesional dengan kualitas terbaik",
 };
 

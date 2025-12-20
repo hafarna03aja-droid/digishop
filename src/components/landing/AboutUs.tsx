@@ -36,9 +36,9 @@ export const AboutUs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Tentang DigiShop</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Tentang NusaPrima</h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
-                            DigiShop adalah platform e-commerce terpercaya yang menyediakan berbagai produk berkualitas
+                            NusaPrima adalah platform e-commerce terpercaya yang menyediakan berbagai produk berkualitas
                             mulai dari madu premium, kopi pilihan, hingga produk digital dan layanan jasa profesional.
                         </p>
                     </motion.div>
