@@ -201,7 +201,7 @@ export const CartSidebar = () => {
                                                     value={customerAddress}
                                                     onChange={(e) => setCustomerAddress(e.target.value)}
                                                     rows={2}
-                                                    className="w-full pl-10 pr-3 py-2 text-sm border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                    className="w-full pl-10 pr-3 py-2 text-base border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
                                                 />
                                             </div>
                                         </div>
@@ -218,7 +218,7 @@ export const CartSidebar = () => {
                                                 <div className="space-y-1">
                                                     <label className="text-xs font-medium text-gray-600">Provinsi</label>
                                                     <select
-                                                        className="w-full p-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                        className="w-full p-2 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                                                         value={selectedProvince}
                                                         onChange={(e) => setSelectedProvince(e.target.value)}
                                                     >
@@ -231,7 +231,7 @@ export const CartSidebar = () => {
                                                 <div className="space-y-1">
                                                     <label className="text-xs font-medium text-gray-600">Kota/Kabupaten</label>
                                                     <select
-                                                        className="w-full p-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                        className="w-full p-2 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                                                         value={selectedCity}
                                                         onChange={(e) => setSelectedCity(e.target.value)}
                                                         disabled={!selectedProvince}
@@ -246,7 +246,7 @@ export const CartSidebar = () => {
                                             <div className="space-y-1">
                                                 <label className="text-xs font-medium text-gray-600">Kurir</label>
                                                 <select
-                                                    className="w-full p-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                    className="w-full p-2 text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                                                     value={selectedCourier}
                                                     onChange={(e) => setSelectedCourier(e.target.value as any)}
                                                 >
