@@ -171,7 +171,7 @@ export const CartSidebar = () => {
                                                     placeholder="Nama Lengkap"
                                                     value={customerName}
                                                     onChange={(e) => setCustomerName(e.target.value)}
-                                                    className="pl-10"
+                                                    className="pl-10 placeholder:text-gray-500"
                                                 />
                                             </div>
                                             <div className="relative">
@@ -181,7 +181,7 @@ export const CartSidebar = () => {
                                                     placeholder="Email"
                                                     value={customerEmail}
                                                     onChange={(e) => setCustomerEmail(e.target.value)}
-                                                    className="pl-10"
+                                                    className="pl-10 placeholder:text-gray-500"
                                                 />
                                             </div>
                                             <div className="relative">
@@ -191,7 +191,7 @@ export const CartSidebar = () => {
                                                     placeholder="No. WhatsApp (08xxx)"
                                                     value={customerPhone}
                                                     onChange={(e) => setCustomerPhone(e.target.value)}
-                                                    className="pl-10"
+                                                    className="pl-10 placeholder:text-gray-500"
                                                 />
                                             </div>
                                             <div className="relative">
@@ -201,7 +201,7 @@ export const CartSidebar = () => {
                                                     value={customerAddress}
                                                     onChange={(e) => setCustomerAddress(e.target.value)}
                                                     rows={2}
-                                                    className="w-full pl-10 pr-3 py-2 text-base border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                    className="w-full pl-10 pr-3 py-2 text-base border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-500"
                                                 />
                                             </div>
                                         </div>
